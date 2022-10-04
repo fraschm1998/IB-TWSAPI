@@ -161,9 +161,9 @@ impl<'a> OrderDecoder<'a> {
         self.decode_all_or_none(fields_iter)?;
         self.decode_min_qty(fields_iter)?;
         self.decode_oca_type(fields_iter)?;
-        self.decode_etrade_only(fields_iter)?;
-        self.decode_firm_quote_only(fields_iter)?;
-        self.decode_nbbo_price_cap(fields_iter)?;
+        //self.decode_etrade_only(fields_iter)?;
+        //self.decode_firm_quote_only(fields_iter)?;
+        //self.decode_nbbo_price_cap(fields_iter)?;
         self.decode_parent_id(fields_iter)?;
         self.decode_trigger_method(fields_iter)?;
         self.decode_vol_order_params(fields_iter, true)?;
@@ -505,31 +505,31 @@ impl<'a> OrderDecoder<'a> {
     }
 
     //----------------------------------------------------------------------------------------------
-    fn decode_etrade_only(
-        &mut self,
-        fields_iter: &mut Iter<String>,
-    ) -> Result<(), IBKRApiLibError> {
-        self.order.e_trade_only = decode_bool(fields_iter)?;
-        Ok(())
-    }
+    //fn decode_etrade_only(
+    //    &mut self,
+    //    fields_iter: &mut Iter<String>,
+    //) -> Result<(), IBKRApiLibError> {
+    //    self.order.e_trade_only = decode_bool(fields_iter)?;
+    //    Ok(())
+    //}
 
     //----------------------------------------------------------------------------------------------
-    fn decode_firm_quote_only(
-        &mut self,
-        fields_iter: &mut Iter<String>,
-    ) -> Result<(), IBKRApiLibError> {
-        self.order.firm_quote_only = decode_bool(fields_iter)?;
-        Ok(())
-    }
+    //fn decode_firm_quote_only(
+    //    &mut self,
+    //    fields_iter: &mut Iter<String>,
+    //) -> Result<(), IBKRApiLibError> {
+    //    self.order.firm_quote_only = decode_bool(fields_iter)?;
+    //    Ok(())
+    //}
 
     //----------------------------------------------------------------------------------------------
-    fn decode_nbbo_price_cap(
-        &mut self,
-        fields_iter: &mut Iter<String>,
-    ) -> Result<(), IBKRApiLibError> {
-        self.order.nbbo_price_cap = decode_f64_show_unset(fields_iter)?;
-        Ok(())
-    }
+    //fn decode_nbbo_price_cap(
+    //    &mut self,
+    //    fields_iter: &mut Iter<String>,
+    //) -> Result<(), IBKRApiLibError> {
+    //    self.order.nbbo_price_cap = decode_f64_show_unset(fields_iter)?;
+    //    Ok(())
+    //}
 
     //----------------------------------------------------------------------------------------------
     fn decode_parent_id(&mut self, fields_iter: &mut Iter<String>) -> Result<(), IBKRApiLibError> {
