@@ -1,5 +1,5 @@
 use crate::{
-    core::client::EClient,
+    core::client::{EClient, LogLevel},
     core::common::{
         BarData, CommissionReport, DepthMktDataDescription, FaDataType, FamilyCode, HistogramData,
         HistoricalTick, HistoricalTickBidAsk, HistoricalTickLast, MarketDataTypeEnum, NewsProvider,
@@ -1805,7 +1805,7 @@ impl ExampleWrapper {
         // Request TWS' current time
         self.client.req_current_time()?;
         // Setting TWS logging level
-        self.client.set_server_log_level(1)?;
+        self.client.set_server_log_level(LogLevel::SYSTEM)?;
 
         Ok(())
     }
