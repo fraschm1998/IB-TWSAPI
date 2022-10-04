@@ -5,7 +5,7 @@ use num_derive::FromPrimitive;
 
 use serde::{Deserialize, Serialize};
 use serde::ser::{Serializer, SerializeStruct};
-use serde::de::{self, Deserializer, Visitor, SeqAccess};
+
 use crate::core::common::{TagValue, UNSET_DOUBLE, UNSET_INTEGER};
 use crate::core::order::AuctionStrategy::AuctionUnset;
 use crate::core::order::Origin::Customer;

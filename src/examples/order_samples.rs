@@ -853,11 +853,11 @@ pub fn attach_adjustable_to_stop(
 ) -> Order {
     // Attached order is a conventional STP order in opposite direction
     let mut order = stop(
-        (if parent.action == "BUY" {
+        if parent.action == "BUY" {
             "SELL"
         } else {
             "BUY"
-        }),
+        },
         parent.total_quantity,
         attached_order_stop_price,
     );
@@ -882,11 +882,11 @@ pub fn attach_adjustable_to_stop_limit(
 ) -> Order {
     // Attached order is a conventional STP order
     let mut order = stop(
-        (if parent.action == "BUY" {
+        if parent.action == "BUY" {
             "SELL"
         } else {
             "BUY"
-        }),
+        },
         parent.total_quantity,
         attached_order_stop_price,
     );
@@ -914,11 +914,11 @@ pub fn attach_adjustable_to_trail(
 ) -> Order {
     // Attached order is a conventional STP order
     let mut order = stop(
-        (if parent.action == "BUY" {
+        if parent.action == "BUY" {
             "SELL"
         } else {
             "BUY"
-        }),
+        },
         parent.total_quantity,
         attached_order_stop_price,
     );

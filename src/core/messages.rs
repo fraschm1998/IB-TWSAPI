@@ -16,7 +16,7 @@ use num_derive::FromPrimitive;
 use crate::core::common::{
     BarData, CommissionReport, DepthMktDataDescription, FaDataType, FamilyCode, HistogramData,
     HistoricalTick, HistoricalTickBidAsk, HistoricalTickLast, NewsProvider, PriceIncrement,
-    RealTimeBar, SmartComponent, TickAttrib, TickAttribBidAsk, TickAttribLast, TickByTickType,
+    RealTimeBar, SmartComponent, TickAttrib,
     TickMsgType, TickType, UNSET_DOUBLE, UNSET_INTEGER,
 };
 use crate::core::contract::{Contract, ContractDescription, ContractPreamble, ContractDetails, DeltaNeutralContract};
