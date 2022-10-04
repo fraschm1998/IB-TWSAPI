@@ -2645,21 +2645,21 @@ impl Decoder {
         is_bond: bool,
         read_date: &str,
     ) -> Result<(), IBKRApiLibError> {
-        if read_date != "" {
+        if !read_date.is_empty() {
             let splitted = read_date.split_whitespace().collect::<Vec<&str>>();
-            if splitted.len() > 0 {
+            if !splitted.is_empty() {
                 if is_bond {
-                    contract.maturity = splitted.get(0).unwrap_or_else(|| &"").to_string();
+                    contract.maturity = splitted.first().unwrap_or(&"").to_string();
                 } else {
                     contract.contract.last_trade_date_or_contract_month =
-                        splitted.get(0).unwrap_or_else(|| &"").to_string();
+                        splitted.get(0).unwrap_or(&"").to_string();
                 }
             }
             if splitted.len() > 1 {
-                contract.last_trade_time = splitted.get(1).unwrap_or_else(|| &"").to_string();
+                contract.last_trade_time = splitted.get(1).unwrap_or(&"").to_string();
             }
             if is_bond && splitted.len() > 2 {
-                contract.time_zone_id = splitted.get(2).unwrap_or_else(|| &"").to_string();
+                contract.time_zone_id = splitted.get(2).unwrap_or(&"").to_string();
             }
         }
         Ok(())
@@ -2686,8 +2686,7 @@ impl Decoder {
                                 TwsError::NotConnected.message(),
                                 val.len(),
                                 val
-                            )
-                            .to_string(),
+                            ),
                         };
 
                         self.send_queue.send(error_msg).unwrap();
@@ -2698,7 +2697,7 @@ impl Decoder {
                         error!("Error receiving message.  Invalid size.  Disconnected.");
                         return Ok(());
                     } else {
-                        let fields = read_fields((&val).as_ref());
+                        let fields = read_fields((val).as_ref());
                         self.interpret(fields.as_slice())?;
                     }
                 }
