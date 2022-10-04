@@ -857,8 +857,7 @@ pub fn attach_adjustable_to_stop(
             "SELL"
         } else {
             "BUY"
-        })
-        .as_ref(),
+        }),
         parent.total_quantity,
         attached_order_stop_price,
     );
@@ -887,8 +886,7 @@ pub fn attach_adjustable_to_stop_limit(
             "SELL"
         } else {
             "BUY"
-        })
-        .as_ref(),
+        }),
         parent.total_quantity,
         attached_order_stop_price,
     );
@@ -920,8 +918,7 @@ pub fn attach_adjustable_to_trail(
             "SELL"
         } else {
             "BUY"
-        })
-        .as_ref(),
+        }),
         parent.total_quantity,
         attached_order_stop_price,
     );
