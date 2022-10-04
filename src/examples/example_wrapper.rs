@@ -1,16 +1,10 @@
 use crate::{
     core::client::{EClient, LogLevel},
-    core::common::{
-        FaDataType, MarketDataTypeEnum, TagValue, TickByTickType,
-    },
+    core::common::{FaDataType, MarketDataTypeEnum, TagValue, TickByTickType},
     core::errors::IBKRApiLibError,
     core::{
-        account_summary_tags::AccountSummaryTags,
-        algo_params::{
-            fill_arrival_price_params,
-        },
-        messages::{ServerRspMsg},
-        order_condition::TriggerMethod,
+        account_summary_tags::AccountSummaryTags, algo_params::fill_arrival_price_params,
+        messages::ServerRspMsg, order_condition::TriggerMethod,
     },
     examples::{
         contract_samples, fa_allocation_samples, order_samples, scanner_subscription_samples,
@@ -1383,13 +1377,12 @@ impl ExampleWrapper {
             tagvalues,
         ); // requires TWS v973 +
         if result.is_err() {
-            match result.unwrap_err() {
-                IBKRApiLibError::ApiError(err) => self.error(
+            if let IBKRApiLibError::ApiError(err) = result.unwrap_err() {
+                self.error(
                     err.req_id,
                     err.code.as_str().parse().unwrap(),
                     err.description.as_ref(),
-                ),
-                _ => {}
+                )
             }
         }
 

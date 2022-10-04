@@ -36,7 +36,7 @@ pub fn main() -> Result<(), IBKRApiLibError> {
             Ok(_) => continue,
             Err(e) => {
                 error!("{}", e.to_string());
-                break ;
+                break;
             }
         };
     }

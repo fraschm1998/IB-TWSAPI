@@ -1,15 +1,15 @@
 //! EClient and supporting structs.  Responsible for connecting to Trader Workstation or IB Gatway and sending requests
 use std::io::Write;
 //use std::marker::Sync;
+use std::fmt;
+use std::fmt::{Debug, Display};
 use std::net::Shutdown;
 use std::net::TcpStream;
 use std::ops::Deref;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc::{channel, Receiver, Sender, TryRecvError};
 use std::sync::{Arc, Mutex};
-use std::{thread, result::Result};
-use std::fmt::{Debug, Display};
-use std::fmt;
+use std::{result::Result, thread};
 
 use from_ascii::FromAscii;
 use log::*;

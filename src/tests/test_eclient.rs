@@ -3,7 +3,7 @@ mod tests {
     use crate::core::client::{ConnStatus, EClient, POISONED_MUTEX};
 
     use crate::core::{
-        execution::{ExecutionFilter},
+        execution::ExecutionFilter,
         streamer::{Streamer, TestStreamer},
     };
     use crate::{

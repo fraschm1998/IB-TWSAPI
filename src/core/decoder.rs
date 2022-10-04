@@ -1567,9 +1567,7 @@ impl Decoder {
             news_providers.push(provider);
         }
 
-        let news_providers = ServerRspMsg::NewsProviders {
-            news_providers,
-        };
+        let news_providers = ServerRspMsg::NewsProviders { news_providers };
 
         self.send_queue.send(news_providers).unwrap();
 

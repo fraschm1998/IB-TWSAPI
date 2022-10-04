@@ -16,14 +16,15 @@ use num_derive::FromPrimitive;
 use crate::core::common::{
     BarData, CommissionReport, DepthMktDataDescription, FaDataType, FamilyCode, HistogramData,
     HistoricalTick, HistoricalTickBidAsk, HistoricalTickLast, NewsProvider, PriceIncrement,
-    RealTimeBar, SmartComponent, TickAttrib,
-    TickMsgType, TickType, UNSET_DOUBLE, UNSET_INTEGER,
+    RealTimeBar, SmartComponent, TickAttrib, TickMsgType, TickType, UNSET_DOUBLE, UNSET_INTEGER,
 };
-use crate::core::contract::{Contract, ContractDescription, ContractPreamble, ContractDetails, DeltaNeutralContract};
+use crate::core::contract::{
+    Contract, ContractDescription, ContractDetails, ContractPreamble, DeltaNeutralContract,
+};
 use crate::core::errors::IBKRApiLibError;
-use crate::core::execution::{Execution,ExecutionFilter};
-use crate::core::scanner::ScannerSubscription;
+use crate::core::execution::{Execution, ExecutionFilter};
 use crate::core::order::{Order, OrderState, SoftDollarTier};
+use crate::core::scanner::ScannerSubscription;
 use serde::Deserialize;
 use serde::Serialize;
 use strum_macros::Display;
@@ -722,7 +723,7 @@ pub enum ServerReqMsg {
         req_id: i32,
         subscription: ScannerSubscription,
         scanner_subscription_filter: String,
-        scanner_subscription_options: String,    
+        scanner_subscription_options: String,
     },
     CancelScannerSubscription {
         version: i32,
@@ -888,12 +889,12 @@ pub enum ServerReqMsg {
     ReqSoftDollarTiers {
         req_id: i32,
     },
-    ReqFamilyCodes ,
+    ReqFamilyCodes,
     ReqMatchingSymbols {
         req_id: i32,
         pattern: String,
     },
-    ReqMktDepthExchanges ,
+    ReqMktDepthExchanges,
     ReqSmartComponents {
         req_id: i32,
         bbo_exchange: String,
@@ -904,7 +905,7 @@ pub enum ServerReqMsg {
         article_id: String,
         news_article_options: String,
     },
-    ReqNewsProviders ,
+    ReqNewsProviders,
     ReqHistoricalNews {
         req_id: i32,
         con_id: i32,
@@ -985,7 +986,6 @@ pub enum ServerReqMsg {
         api_only: bool,
     },
 }
-
 
 //==================================================================================================
 pub fn make_message(msg: &str) -> Result<Vec<u8>, IBKRApiLibError> {
