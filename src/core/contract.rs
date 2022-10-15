@@ -80,14 +80,14 @@ impl Display for ComboLeg {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         write!(
             f,
-            "con_id: {},
-            ratio: {},
-            action: {},
-            exchange: {},
-            open_close: {},
-            short_sale_slot: {},
-            designated_location: {},
-            exempt_code: {}",
+            "con_id: {}\n
+            ratio: {}\n
+            action: {}\n
+            exchange: {}\n
+            open_close: {}\n
+            short_sale_slot: {}\n
+            designated_location: {}\n
+            exempt_code: {}\n",
             self.con_id,
             self.ratio,
             self.action,
@@ -122,7 +122,7 @@ impl Display for DeltaNeutralContract {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         write!(
             f,
-            "con_id: {}, delta: {}, price: {},",
+            "con_id: {}\n delta: {}\n price: {}\n",
             self.con_id, self.delta, self.price,
         )
     }
@@ -405,46 +405,46 @@ impl Display for ContractDetails {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         write!(
             f,
-            "contract: {},
-            market_name: {},
-            min_tick: {},
-            order_types: {},
-            valid_exchanges: {},
-            price_magnifier: {},
-            under_con_id: {},
-            long_name: {},
-            contract_month: {},
-            industry: {},
-            category: {},
-            subcategory: {},
-            time_zone_id: {},
-            trading_hours: {},
-            liquid_hours: {},
-            ev_rule: {},
-            ev_multiplier: {},
-            md_size_multiplier: {},
-            agg_group: {},
-            under_symbol: {},
-            under_sec_type: {},
-            market_rule_ids: {},
-            sec_id_list: {},
-            real_expiration_date: {},
-            last_trade_time: {},
-            cusip: {},
-            ratings: {},
-            desc_append: {},
-            bond_type: {},
-            coupon_type: {},
-            callable: {},
-            putable: {},
-            coupon: {},
-            convertible: {},
-            maturity: {},
-            issue_date: {},
-            next_option_date: {},
-            next_option_type: {},
-            next_option_partial: {},
-            notes: {},",
+            "contract: {}\n
+            market_name: {}\n
+            min_tick: {}\n
+            order_types: {}\n
+            valid_exchanges: {}\n
+            price_magnifier: {}\n
+            under_con_id: {}\n
+            long_name: {}\n
+            contract_month: {}\n
+            industry: {}\n
+            category: {}\n
+            subcategory: {}\n
+            time_zone_id: {}\n
+            trading_hours: {}\n
+            liquid_hours: {}\n
+            ev_rule: {}\n
+            ev_multiplier: {}\n
+            md_size_multiplier: {}\n
+            agg_group: {}\n
+            under_symbol: {}\n
+            under_sec_type: {}\n
+            market_rule_ids: {}\n
+            sec_id_list: {}\n
+            real_expiration_date: {}\n
+            last_trade_time: {}\n
+            cusip: {}\n
+            ratings: {}\n
+            desc_append: {}\n
+            bond_type: {}\n
+            coupon_type: {}\n
+            callable: {}\n
+            putable: {}\n
+            coupon: {}\n
+            convertible: {}\n
+            maturity: {}\n
+            issue_date: {}\n
+            next_option_date: {}\n
+            next_option_type: {}\n
+            next_option_partial: {}\n
+            notes: {}\n",
             self.contract,
             self.market_name,
             self.min_tick,
@@ -513,7 +513,7 @@ impl Display for ContractDescription {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         write!(
             f,
-            "contract: {}, derivative_sec_types: ({})",
+            "contract: {}\nderivative_sec_types: ({})\n",
             self.contract,
             self.derivative_sec_types
                 .iter()

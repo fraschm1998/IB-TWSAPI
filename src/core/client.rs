@@ -3245,11 +3245,11 @@ impl EClient {
     /// Returns the timestamp of earliest available historical data for a contract and data type.
     ///
     /// # Arguments
-    /// * req_id	- an identifier for the request
-    /// * contract	- contract object for which head timestamp is being requested
-    /// * what_to_show	- type of data for head timestamp - "BID", "ASK", "TRADES", etc
-    /// * use_rth	- use regular trading hours only, 1 for yes or 0 for no
-    /// * format_date	set to 1 to obtain the bars' time as yyyyMMdd HH:mm:ss, set to 2 to obtain it like system time format in seconds
+    /// * req_id          - an identifier for the request
+    /// * contract        - contract object for which head timestamp is being requested
+    /// * what_to_show    - type of data for head timestamp - "BID", "ASK", "TRADES", etc
+    /// * use_rth         - use regular trading hours only, 1 for yes or 0 for no
+    /// * format_date     - set to 1 to obtain the bars' time as yyyyMMdd HH:mm:ss, set to 2 to obtain it like system time format in seconds
     ///
     /// Note that formatData parameter affects intraday bars only
     /// 1-day bars always return with date in YYYYMMDD format
@@ -3973,13 +3973,13 @@ impl EClient {
     ///
     /// # Arguments
     ///
-    /// * req_id - id of the request
-    /// * con_id - contract id
-    /// * provider_codes - a '+'-separated list of provider codes
-    /// * start_date_time	- marks the (exclusive) start of the date range. The format is yyyy-MM-dd HH:mm:ss.0
-    /// * end_date_time	- marks the (inclusive) end of the date range. The format is yyyy-MM-dd HH:mm:ss.0
-    /// * total_results	- the maximum number of headlines to fetch (1 - 300)
-    /// * historical_news_options	reserved for internal use. Should be defined as null.
+    /// * req_id                     - id of the request
+    /// * con_id                     - contract id
+    /// * provider_codes             - a '+'-separated list of provider codes
+    /// * start_date_time            - marks the (exclusive) start of the date range. The format is yyyy-MM-dd HH:mm:ss.0
+    /// * end_date_time              - marks the (inclusive) end of the date range. The format is yyyy-MM-dd HH:mm:ss.0
+    /// * total_results              - the maximum number of headlines to fetch (1 - 300)
+    /// * historical_news_options    - reserved for internal use. Should be defined as null.
     pub fn req_historical_news(
         &mut self,
         req_id: i32,
